@@ -7,3 +7,26 @@ class Node:
 class SingleLinkList:
     def __init__(self, head=None) -> None:
         self.head = head
+
+    def build_with_list(self, data_list:list) -> None:
+        cur = self.head
+        for data in data_list:
+            if self.head == None:
+                self.head = Node(data)
+                cur = self.head
+                continue
+            
+            cur.next = Node(data)
+            cur = cur.next
+
+    def print(self):
+        cur = self.head
+        while cur:
+            print(cur.value, end="->")
+            cur = cur.next
+        print("|")
+
+if __name__ == "__main__":
+    s = SingleLinkList()
+    s.build_with_list([1, 2, 3, 3,2,1])
+    s.print()

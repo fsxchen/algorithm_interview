@@ -6,5 +6,13 @@ def reserve_single_link_list(link_list: SingleLinkList):
         return
     pre = None
     cur = link_list.head
-    while cur != None:
+    while cur:
+        next_node = cur.next
+        cur.next = pre
         
+        pre = cur
+        cur = next_node
+
+
+if __name__ == "__main__":
+    s = SingleLinkList()
