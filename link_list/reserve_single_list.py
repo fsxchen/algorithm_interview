@@ -1,11 +1,11 @@
 from link_list import SingleLinkList, Node
 
 
-def reserve_single_link_list(link_list: SingleLinkList):
-    if link_list.head == None:
+def reserve_single_link_list(head: Node):
+    if head == None:
         return
     pre = None
-    cur = link_list.head
+    cur = head
     while cur:
         next_node = cur.next
         cur.next = pre
@@ -13,6 +13,13 @@ def reserve_single_link_list(link_list: SingleLinkList):
         pre = cur
         cur = next_node
 
+    return pre
+
 
 if __name__ == "__main__":
     s = SingleLinkList()
+    s.build_with_list([1, 2, 3])
+    s.print()
+    new_head = reserve_single_link_list(s.head)
+    s.head = new_head
+    s.print()
