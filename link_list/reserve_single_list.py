@@ -1,5 +1,8 @@
-from link_list import SingleLinkList, Node
 
+class SingleLinkedList:
+    def __init__(self) -> None:    
+        pass
+    
 
 def reserve_single_link_list(head: Node):
     if head == None:
